@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.core.view.isVisible
+import com.lenovo.mutimodeshow.bean.MyApplication
 
 object AnimationUtil {
 
@@ -22,7 +23,12 @@ object AnimationUtil {
     private var parkOut: IntArray? = null
     private var parkIn: IntArray? = null
     private val duration = 1
-
+    private var workinId=getRes(R.array.workin)
+    private var workoutId=getRes(R.array.workout)
+    private var highwayinId=getRes(R.array.highwayin)
+    private var highwayoutId=getRes(R.array.highwayout)
+    private var parkoutId=getRes(R.array.parkout)
+    private var parkinId=getRes(R.array.parkin)
 
     fun transitionAnimation(
         currentSence: String,
@@ -51,12 +57,10 @@ object AnimationUtil {
             if (lastSence.equals("expressway")) {
                 Log.e("TAG", "  framgeImageView.isVisible" + framgeImageView.isVisible)
 
-                if (frameAnimationHightOut == null) {
-                    hightWayOut = getRes(R.array.highwayout, context)
                     frameAnimationHightOut =
                         FrameAnimation(
                             framgeImageView,
-                            hightWayOut,
+                            highwayoutId,
                             duration,
                             false
                         )
@@ -71,11 +75,10 @@ object AnimationUtil {
                             //入场动画 公园
                             if (currentSence.equals("neighborhood")) {
 
-                                if (frameAnimationPOIn == null) {
                                     frameAnimationPOIn =
                                         FrameAnimation(
                                             framgeImageView,
-                                            getRes(R.array.parkin, context),
+                                            parkinId,
                                             duration,
                                             false
                                         )
@@ -98,7 +101,6 @@ object AnimationUtil {
                                         override fun onAnimationRepeat() {
                                         }
                                     })
-                                }
                                 Log.e("TAG","ssssssssssssssssss =============neighborhood in"+lastSence)
                                 frameAnimationPOIn?.play(duration)
 
@@ -106,11 +108,10 @@ object AnimationUtil {
 
                                 //入场动画，公司
 
-                                if (frameAnimationWorkIn == null) {
                                     frameAnimationWorkIn =
                                         FrameAnimation(
                                             framgeImageView,
-                                            getRes(R.array.workin, context),
+                                            workinId,
                                             duration,
                                             false
                                         )
@@ -135,11 +136,7 @@ object AnimationUtil {
                                     })
                                 }
                                 Log.e("TAG","ssssssssssssssssss =============frameAnimationWorkIn in"+lastSence)
-                                frameAnimationWorkIn!!.play(duration)
-
-
-                            }
-
+                                frameAnimationWorkIn?.play(duration)
 
                         }
 
@@ -147,17 +144,17 @@ object AnimationUtil {
                         }
                     })
 
-                }
+
                 frameAnimationHightOut?.play(duration)
 
             } else if (lastSence.equals("workplace")) {
 
                 Log.e("TAG", "beging work out")
-                if (frameAnimationWorkOut == null) {
+
                     frameAnimationWorkOut =
                         FrameAnimation(
                             framgeImageView,
-                            getRes(R.array.workout, context),
+                            workoutId,
                             duration,
                             false
                         )
@@ -171,11 +168,10 @@ object AnimationUtil {
 
                             //入场动画 公园
                             if (currentSence.equals("neighborhood")) {
-                                if (frameAnimationPOIn == null) {
                                     frameAnimationPOIn =
                                         FrameAnimation(
                                             framgeImageView,
-                                            getRes(R.array.parkin, context),
+                                            parkinId,
                                             duration,
                                             false
                                         )
@@ -198,17 +194,15 @@ object AnimationUtil {
                                         override fun onAnimationRepeat() {
                                         }
                                     })
-                                }
                                 frameAnimationPOIn!!.play(duration)
                                 Log.e("TAG","ssssssssssssssssss =============neighborhood in"+lastSence)
                             } else {
 
 
-                                if (frameAnimationHightIn == null) {
                                     frameAnimationHightIn =
                                         FrameAnimation(
                                             framgeImageView,
-                                            getRes(R.array.highwayin, context),
+                                            highwayinId,
                                             duration,
                                             false
                                         )
@@ -231,7 +225,6 @@ object AnimationUtil {
                                         override fun onAnimationRepeat() {
                                         }
                                     })
-                                }
                                 frameAnimationHightIn!!.play(duration)
                                 Log.e("TAG","ssssssssssssssssss =============frameAnimationHightIn in"+lastSence)
 
@@ -243,7 +236,6 @@ object AnimationUtil {
                         }
 
                     })
-                }
                 frameAnimationWorkOut!!.play(duration)
 
             } else {
@@ -252,11 +244,10 @@ object AnimationUtil {
 
                 if (lastSence.equals("neighborhood")) {
                     Log.e("TAG", " neighborhood in and current sence is =======" + currentSence)
-                    if (frameAnimationPOOut == null) {
                         frameAnimationPOOut =
                             FrameAnimation(
                                 framgeImageView,
-                                getRes(R.array.parkout, context),
+                                parkoutId,
                                 duration,
                                 false
                             )
@@ -270,11 +261,10 @@ object AnimationUtil {
 
                                 //入场动画 公园
                                 if (currentSence.equals("workplace")) {
-                                    if (frameAnimationWorkIn == null) {
                                         frameAnimationWorkIn =
                                             FrameAnimation(
                                                 framgeImageView,
-                                                getRes(R.array.workin, context),
+                                                workinId,
                                                 duration,
                                                 false
                                             )
@@ -297,16 +287,14 @@ object AnimationUtil {
                                             override fun onAnimationRepeat() {
                                             }
                                         })
-                                    }
                                     frameAnimationWorkIn!!.play(duration)
                                     Log.e("TAG","ssssssssssssssssss =============workplaceIn in"+currentSence)
                                 } else {
 
-                                    if (frameAnimationHightIn == null) {
                                         frameAnimationHightIn =
                                             FrameAnimation(
                                                 framgeImageView,
-                                                getRes(R.array.highwayin, context),
+                                                highwayinId,
                                                 duration,
                                                 false
                                             )
@@ -329,7 +317,6 @@ object AnimationUtil {
                                             override fun onAnimationRepeat() {
                                             }
                                         })
-                                    }
                                     frameAnimationHightIn!!.play(duration)
                                     Log.e("TAG","ssssssssssssssssss =============frameAnimationHightIn In in"+lastSence)
 
@@ -342,7 +329,6 @@ object AnimationUtil {
 
                         })
 
-                    }
                     frameAnimationPOOut!!.play(duration)
 
                 }
@@ -351,8 +337,8 @@ object AnimationUtil {
         }
     }
 
-    fun getRes(resId: Int, context: Context): IntArray {
-        val typedArray = context.resources.obtainTypedArray(resId)
+    fun getRes(resId: Int): IntArray {
+        val typedArray = MyApplication.context.resources.obtainTypedArray(resId)
         val len = typedArray.length()
         val resId = IntArray(len)
         for (i in 0 until len) {

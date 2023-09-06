@@ -136,9 +136,13 @@ class MainActivity : AppCompatActivity(), WsListener.PassengerInfoListioner, Vie
     }
 
     override fun onPassengerInfo(passengerInfo: PassengerInfo?) {
-        runOnUiThread {
-            weatherValue.text=passengerInfo?.getMessage()?.temperature.toString()
-            Toast.makeText(this,passengerInfo?.message?.scene,Toast.LENGTH_SHORT).show()
+        runOnUiThread {object :Runnable{
+            override fun run() {
+                weatherValue.text=passengerInfo?.getMessage()?.temperature.toString()
+                Toast.makeText(this@MainActivity,passengerInfo?.message?.scene,Toast.LENGTH_SHORT).show()
+            }
+        }
+
         }
 
         if (passengerInfo?.status == 4 || passengerInfo?.status == 5 || passengerInfo?.status == 6) return
@@ -156,7 +160,8 @@ class MainActivity : AppCompatActivity(), WsListener.PassengerInfoListioner, Vie
         MainViewContorler.updateView(passenger3Info, passenger3, emmotion4View, emotionLayout4)
 
         currentSencce =passengerInfo.message.scene
-
+//        lastSence="expressway"
+//        currentSencce="neighborhood"
         AnimationUtil.transitionAnimation(
             currentSencce,
             lastSence,
@@ -218,16 +223,16 @@ class MainActivity : AppCompatActivity(), WsListener.PassengerInfoListioner, Vie
             }
 
         }
-        AnimationUtil.transitionAnimation(
-            currentSencce,
-            lastSence,
-            driver,
-            passsenger1,
-            passsenger2,
-            passenger3,
-            frameImageView,
-            this
-        )
+//        AnimationUtil.transitionAnimation(
+//            currentSencce,
+//            lastSence,
+//            driver,
+//            passsenger1,
+//            passsenger2,
+//            passenger3,
+//            frameImageView,
+//            this
+//        )
     }
 
 
