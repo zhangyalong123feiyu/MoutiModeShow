@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/carBackImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/carback" />
+
+    <TextView
+        android:id="@+id/weatherValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="26.5dp"
+        android:text="15"
+        android:textSize="60sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="147dp"
+        android:layout_marginTop="30dp">
+
+        <ImageView
+            android:id="@+id/weather"
+            android:layout_width="30.5dp"
+            android:layout_height="30.5dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/weather" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/weather"
+            android:layout_marginTop="4.5dp"
+            android:text="Cloudy"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+   <!--passenger2 and 3 is use on level-->
+    <ImageView
+        android:id="@+id/passsenger2"
+        android:layout_width="567dp"
+        android:layout_height="567dp"
+        android:layout_marginLeft="547dp"
+        android:layout_marginTop="85dp"
+        android:src="@mipmap/passeger2" />
+
+    <ImageView
+        android:id="@+id/passenger3"
+        android:layout_width="567dp"
+        android:layout_height="567dp"
+        android:layout_marginLeft="698dp"
+        android:layout_marginTop="107dp"
+        android:src="@mipmap/passeger3" />
+
+    <!--midel use one level-->
+    <ImageView
+        android:id="@+id/carMidelImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="-1dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/camidel" />
+
+    <!--driver and passenger 1 use on level-->
+    <ImageView
+        android:id="@+id/passsenger1"
+        android:layout_width="567dp"
+        android:layout_height="567dp"
+        android:layout_marginLeft="414dp"
+        android:layout_marginTop="111dp"
+        android:src="@mipmap/passeger1" />
+
+    <ImageView
+        android:id="@+id/driver"
+        android:layout_width="567dp"
+        android:layout_height="567dp"
+        android:layout_marginLeft="559dp"
+        android:layout_marginTop="139dp"
+        android:src="@mipmap/driver" />
+
+    <ImageView
+        android:id="@+id/wheel"
+        android:layout_width="567dp"
+        android:layout_height="567dp"
+        android:layout_marginLeft="559dp"
+        android:layout_marginTop="139dp"
+        android:src="@mipmap/wheel" />
+
+    <ImageView
+        android:id="@+id/carFrontImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/carforground" />
+
+    <RelativeLayout
+        android:id="@+id/emotionLayout1"
+        android:layout_width="139dp"
+        android:layout_height="89dp"
+        android:layout_marginLeft="910dp"
+        android:layout_marginTop="384dp"
+        android:background="@mipmap/chatbg_right"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/emmotion1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/happy" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/emotionLayout2"
+        android:layout_width="139dp"
+        android:layout_height="89dp"
+        android:layout_marginLeft="496dp"
+        android:layout_marginTop="160dp"
+        android:background="@mipmap/chatbg_left"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/emmotion2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/happy" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/emotionLayout3"
+        android:layout_width="139dp"
+        android:layout_height="89dp"
+        android:layout_marginLeft="682dp"
+        android:layout_marginTop="89dp"
+        android:background="@mipmap/chatbg_left"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/emmotion3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/happy" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/emotionLayout4"
+        android:layout_width="139dp"
+        android:layout_height="89dp"
+        android:layout_marginLeft="1105dp"
+        android:layout_marginTop="316dp"
+        android:background="@mipmap/chatbg_right"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/emmotion4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/happy" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/frameImageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:id="@+id/HomeButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="17dp"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/residences"
+            android:layout_width="79dp"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/vilageselector" />
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/highway"
+            android:layout_width="79dp"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/highwayselector" />
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/ai"
+            android:layout_width="79dp"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/parkselector" />
+    </LinearLayout>
+
+
+</RelativeLayout>

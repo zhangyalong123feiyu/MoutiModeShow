@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="28"
+        android:textSize="60sp"
+        android:layout_marginTop="26.5dp"
+        android:layout_marginLeft="28dp"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="147dp">
+        <ImageView
+            android:id="@+id/weather"
+            android:layout_width="30.5dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/weather"
+            android:layout_height="30.5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cloudy"
+            android:layout_below="@id/weather"
+            android:textSize="12sp"
+            android:layout_marginTop="4.5dp"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.yuyashuai.frameanimation.FrameAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/ic_launcher"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/HomeButtonLayout"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_height="100dp">
+        <ImageView
+            android:id="@+id/residences"
+            android:layout_width="100dp"
+            android:text="residences"
+            android:layout_height="match_parent"/>
+        <View
+            android:layout_width="30dp"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/highway"
+            android:layout_width="100dp"
+            android:text="highway"
+            android:layout_height="match_parent"/>
+        <View
+            android:layout_width="30dp"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/ai"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="ai"/>
+    </LinearLayout>>
+
+</RelativeLayout>
