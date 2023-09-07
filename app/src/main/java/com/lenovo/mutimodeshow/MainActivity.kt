@@ -1,5 +1,6 @@
 package com.lenovo.mutimodeshow
 
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -114,7 +115,6 @@ class MainActivity : AppCompatActivity(), WsListener.PassengerInfoListioner, Vie
 //        })
         lastSence = "expressway"
 
-
     }
 
     fun getRes(resId: Int): IntArray? {
@@ -136,13 +136,10 @@ class MainActivity : AppCompatActivity(), WsListener.PassengerInfoListioner, Vie
     }
 
     override fun onPassengerInfo(passengerInfo: PassengerInfo?) {
-        runOnUiThread {object :Runnable{
-            override fun run() {
+
+        runOnUiThread {
                 weatherValue.text=passengerInfo?.getMessage()?.temperature.toString()
                 Toast.makeText(this@MainActivity,passengerInfo?.message?.scene,Toast.LENGTH_SHORT).show()
-            }
-        }
-
         }
 
         if (passengerInfo?.status == 4 || passengerInfo?.status == 5 || passengerInfo?.status == 6) return
@@ -162,7 +159,7 @@ class MainActivity : AppCompatActivity(), WsListener.PassengerInfoListioner, Vie
         currentSencce =passengerInfo.message.scene
 //        lastSence="expressway"
 //        currentSencce="neighborhood"
-        AnimationUtil.transitionAnimation(
+        AnimationUtilS.transitionAnimation(
             currentSencce,
             lastSence,
             driver,

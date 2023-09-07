@@ -53,13 +53,11 @@
         <item>@mipmap/sence1_00047</item>
         <item>@mipmap/sence1_00048</item>
         <item>@mipmap/sence1_00049</item>
-        <item>@mipmap/sence1_00050</item>
 
     </array>
 
     <array name="highwayin">
 
-        <item>@mipmap/sence1_00050</item>
         <item>@mipmap/sence1_00049</item>
         <item>@mipmap/sence1_00048</item>
         <item>@mipmap/sence1_00047</item>
